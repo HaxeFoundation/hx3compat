@@ -9,5 +9,6 @@
   "contributors": ["Simn"],
   "dependencies": {
 
-  }
+  },
+  "classPath": "std"
 }
