@@ -24,7 +24,7 @@ package haxe.remoting;
 /**
 	For asynchronous connections, where the results are events that will be resolved later in the execution process.
 */
-interface AsyncConnection implements Dynamic<AsyncConnection> {
+interface AsyncConnection {
 
 	function resolve( name : String ) : AsyncConnection;
 	function call( params : Array<Dynamic>, ?result : Dynamic -> Void ) : Void;

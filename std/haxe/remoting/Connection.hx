@@ -21,7 +21,7 @@
  */
 package haxe.remoting;
 
-interface Connection implements Dynamic<Connection> {
+interface Connection {
 
 	function resolve( name : String ) : Connection;
 	function call( params : Array<Dynamic> ) : Dynamic;

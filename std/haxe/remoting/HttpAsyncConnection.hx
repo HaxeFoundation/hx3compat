@@ -24,7 +24,7 @@ package haxe.remoting;
 /**
     Allows an asynchronous connection to the given URL which should link to a Haxe server application.
 */
-class HttpAsyncConnection implements AsyncConnection implements Dynamic<AsyncConnection> {
+class HttpAsyncConnection implements AsyncConnection {
 
 	var __data : { url : String, error : Dynamic -> Void };
 	var __path : Array<String>;
