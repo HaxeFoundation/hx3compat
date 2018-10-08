@@ -1,4 +1,3 @@
-import haxe.ds.List;
 /*
  * Copyright (C)2005-2018 Haxe Foundation
  *
@@ -37,7 +36,7 @@ import haxe.ds.List;
 **/
 
 class Lambda {
-	
+
 
 	/**
 		Creates an Array from Iterable `it`.

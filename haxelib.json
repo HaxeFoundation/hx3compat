@@ -4,8 +4,8 @@
   "license": "BSD",
   "tags": ["cross"],
   "description": "Some haxe 3 types for easier migration to haxe 4.",
-  "version": "1.0.0",
-  "releasenote": "Initial",
+  "version": "1.0.2",
+  "releasenote": "update",
   "contributors": ["Simn"],
   "dependencies": {
 
