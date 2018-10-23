@@ -15,7 +15,7 @@ class JqIterator {
 	}
 
 	static function __init__() {
-		var JQueryDefined = #if haxe4
+		var JQueryDefined = #if (haxe_ver >= 4)
 			js.Syntax.typeof(JQuery) != "undefined";
 		#else 
 			untyped __typeof__(JQuery) != "undefined";
