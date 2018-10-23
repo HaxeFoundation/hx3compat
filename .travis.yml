@@ -1,0 +1,18 @@
+language: haxe
+
+haxe:
+  - "3.0.0"
+  - "3.1.0"
+  - "3.2.0"
+  - "3.3.0"
+  - "3.4.0"
+  - "3.4.7"
+  - "development"
+
+dist: trusty
+
+sudo: false
+
+script:
+  - haxe test-js.hxml
+  - haxe test-neko.hxml
