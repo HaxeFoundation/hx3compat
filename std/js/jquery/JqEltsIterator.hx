@@ -15,7 +15,13 @@ class JqEltsIterator {
 	}
 
 	static function __init__() {
-		if (js.Syntax.typeof(JQuery) != "undefined" && JQuery.fn != null)
+		var JQueryDefined = #if (haxe_ver >= 4)
+			js.Syntax.typeof(JQuery) != "undefined";
+		#else 
+			untyped __typeof__(JQuery) != "undefined";
+		#end
+		if (JQueryDefined && JQuery.fn != null) {
 			JQuery.fn.elements = function() return new JqEltsIterator(js.Lib.nativeThis);
+		}
 	}
 }
