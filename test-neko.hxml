@@ -1,0 +1,9 @@
+test.hxml
+
+# include packages from hx3compat
+--macro include("neko.net", true)
+
+# include classes from hx3compat
+Lambda
+
+-neko test.n

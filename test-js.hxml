@@ -1,0 +1,13 @@
+test.hxml
+
+# include packages from hx3compat
+--macro include("js.jquery", true)
+--macro include("js.swfobject", true)
+
+# include classes from hx3compat
+js.JQuery
+js.SWFObject
+js.XMLSocket
+Lambda
+
+-js test.js

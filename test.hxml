@@ -1,0 +1,7 @@
+--no-output
+-cp test
+-cp std
+-dce no
+-main Test
+--macro include("haxe.unit", true)
+--macro include("haxe.web", true)
