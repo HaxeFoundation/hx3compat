@@ -59,7 +59,7 @@ class HttpConnection implements Connection {
 		s.serialize(params);
 		h.setHeader("X-Haxe-Remoting","1");
 		h.setParameter("__x",s.toString());
-		h.onData = function(d) { data = d; };
+		h.onData = function(d) { data = Std.is(d,String) ? (d:String): ""; };
 		h.onError = function(e) { throw e; };
 		h.request(true);
 		if( data.substr(0,3) != "hxr" )

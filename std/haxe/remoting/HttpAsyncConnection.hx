@@ -55,7 +55,8 @@ class HttpAsyncConnection implements AsyncConnection {
 		h.setHeader("X-Haxe-Remoting","1");
 		h.setParameter("__x",s.toString());
 		var error = __data.error;
-		h.onData = function( response : String ) {
+		h.onData = function( resp : Any ) {
+			var response = Std.is(resp,String) ? (resp:String) : "";
 			var ok = true;
 			var ret;
 			try {
