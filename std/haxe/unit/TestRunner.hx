@@ -93,7 +93,7 @@ class TestRunner {
 			cs.system.Console.Write(v);
 		#elseif java
 			var str:String = v;
-			untyped __java__("java.lang.System.out.print(str)");
+			java.lang.System.out.print(str);
 		#elseif python
 			python.Lib.print(v);
 		#elseif (hl || lua || eval)
