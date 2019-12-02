@@ -7,7 +7,6 @@ test.hxml
 # include classes from hx3compat
 js.JQuery
 js.SWFObject
-js.XMLSocket
 Lambda
 
 -js test.js
