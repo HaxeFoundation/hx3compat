@@ -58,7 +58,7 @@ class ThreadRemotingServer extends ThreadServer<haxe.remoting.SocketConnection,S
 		var cnx = haxe.remoting.SocketConnection.create(s,ctx);
 		var me = this;
 		cnx.setErrorHandler(function(e) {
-			if( !Std.is(e,haxe.io.Eof) && !Std.is(e,haxe.io.Error) )
+			if( !Std.isOfType(e,haxe.io.Eof) && !Std.isOfType(e,haxe.io.Error) )
 				me.logError(e);
 			me.stopClient(s);
 		});
@@ -105,7 +105,7 @@ class ThreadRemotingServer extends ThreadServer<haxe.remoting.SocketConnection,S
 			} else
 				cnx.processMessage(msg);
 		} catch( e : Dynamic ) {
-			if( !Std.is(e,haxe.io.Eof) && !Std.is(e,haxe.io.Error) )
+			if( !Std.isOfType(e,haxe.io.Eof) && !Std.isOfType(e,haxe.io.Error) )
 				logError(e);
 			stopClient(cnx.getProtocol().socket);
 		}
