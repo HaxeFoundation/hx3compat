@@ -156,7 +156,7 @@ class ThreadServer<Client,Message> {
 					readClientData(infos);
 				} catch( e : Dynamic ) {
 					t.socks.remove(s);
-					if( !Std.isStd.isOfType(e,haxe.io.Eof) && !Std.isStd.isOfType(e,haxe.io.Error) )
+					if( !Std.isOfType(e,haxe.io.Eof) && !Std.isOfType(e,haxe.io.Error) )
 						logError(e);
 					work(doClientDisconnected.bind(s,infos.client));
 				}
