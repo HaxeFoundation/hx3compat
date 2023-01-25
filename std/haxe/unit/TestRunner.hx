@@ -91,12 +91,12 @@ class TestRunner {
 
 		#elseif cs
 			cs.system.Console.Write(v);
-		#elseif java
+		#elseif (java && !jvm)
 			var str:String = v;
 			java.lang.System.out.print(str);
 		#elseif python
 			python.Lib.print(v);
-		#elseif (hl || lua || eval)
+		#elseif (hl || lua || eval || jvm)
 			Sys.print(Std.string(v));
 		#end
 	}
