@@ -404,7 +404,7 @@ extern class JQuery implements ArrayAccess<Element> {
 		#error "Haxe no longer bundle third-party JS libraries. Please remove `-D embed-js`. You may download the JS files and use `haxe.macro.Compiler.includeFile`."
 		#end
 		var q : Dynamic = (untyped js.Browser.window).jQuery;
-		untyped __js__("var js = js || {}");
+		untyped js.Syntax.code("var js = js || {}");
 		js.JQuery = q;
 		__feature__('js.JQuery.iterator',
 			q.fn.iterator = function() return { pos : 0, j : __this__, hasNext : function() return __this__.pos < __this__.j.length, next : function() return $(__this__.j[__this__.pos++]) }
