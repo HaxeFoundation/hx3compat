@@ -76,18 +76,18 @@ class TestRunner {
 		#elseif js
 			var msg = js.Boot.__string_rec(v,"");
 			var d;
-			if( __js__("typeof")(document) != "undefined"
+			if( js.Syntax.code("typeof")(document) != "undefined"
 				&& (d = document.getElementById("haxe:trace")) != null ) {
 				msg = StringTools.htmlEscape(msg).split("\n").join("<br/>");
 				d.innerHTML += msg+"<br/>";
 			}
-			else if (  __js__("typeof process") != "undefined"
-					&& __js__("process").stdout != null
-					&& __js__("process").stdout.write != null)
-				__js__("process").stdout.write(msg); // node
-			else if (  __js__("typeof console") != "undefined"
-					&& __js__("console").log != null )
-				__js__("console").log(msg); // document-less js (which may include a line break)
+			else if (  js.Syntax.code("typeof process") != "undefined"
+					&& js.Syntax.code("process").stdout != null
+					&& js.Syntax.code("process").stdout.write != null)
+				js.Syntax.code("process").stdout.write(msg); // node
+			else if (  js.Syntax.code("typeof console") != "undefined"
+					&& js.Syntax.code("console").log != null )
+				js.Syntax.code("console").log(msg); // document-less js (which may include a line break)
 
 		#elseif cs
 			cs.system.Console.Write(v);
