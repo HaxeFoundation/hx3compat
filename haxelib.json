@@ -1,7 +1,7 @@
 {
   "name": "hx3compat",
   "url": "https://github.com/HaxeFoundation/hx3compat",
-  "license": "BSD",
+  "license": "MIT",
   "tags": ["cross"],
   "description": "Some haxe 3 types for easier migration to haxe 4.",
   "version": "1.0.3",
