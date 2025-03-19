@@ -41,7 +41,7 @@ class Context {
 		var inf = objects.get(path[0]);
 		if( inf == null )
 			throw "No such object "+path[0];
-		var o = inf.obj;
+		var o:Dynamic = inf.obj;
 		var m = Reflect.field(o,path[1]);
 		if( path.length > 2 ) {
 			if( !inf.rec ) throw "Can't access "+path.join(".");
