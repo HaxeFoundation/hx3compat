@@ -470,7 +470,7 @@ class Dispatch {
 		var c = Type.getClass(obj);
 		var dc = haxe.rtti.Meta.getType(c);
 		var m : Dynamic = dc.dispatchConfig[0];
-		if( Std.isOfType(m,String) ) {
+		if( Std.is(m,String) ) {
 			m = haxe.Unserializer.run(m);
 			dc.dispatchConfig[0] = m;
 		}

@@ -217,7 +217,7 @@ class ServerLoop<ClientData> {
 						readData(cl);
 						processData(cl);
 					} catch( e : Dynamic ) {
-						if( !Std.isOfType(e,haxe.io.Eof) )
+						if( !Std.is(e,haxe.io.Eof) )
 							onError(e);
 						closeConnection(cl.sock);
 					}
