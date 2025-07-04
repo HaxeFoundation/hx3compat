@@ -4,8 +4,8 @@
   "license": "MIT",
   "tags": ["cross"],
   "description": "Some haxe 3 types for easier migration to haxe 4.",
-  "version": "1.0.3",
-  "releasenote": "update",
+  "version": "1.1.0",
+  "releasenote": "compatibility fixes",
   "contributors": ["Simn", "markknol", "Gama11"],
   "dependencies": {
 
