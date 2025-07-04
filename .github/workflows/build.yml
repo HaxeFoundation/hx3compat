@@ -25,12 +25,13 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: 
+        os:
         - ubuntu-latest
         - macos-latest
         - windows-latest
         haxe:
         - latest
+        - 4.3.7
         - 4.2.5
         - 4.1.5
         - 4.0.5
@@ -52,10 +53,24 @@ jobs:
     ##################################################
 
     - name: Compile [neko]
+      if: matrix.haxe != 'latest'
       run: haxe test-neko.hxml
+
+    - name: Compile [neko]
+      if: matrix.haxe == 'latest'
+      run: |
+        haxelib git hx4compat https://github.com/HaxeFoundation/hx4compat
+        haxe test-neko.hxml -lib hx4compat
 
     - name: Compile [js]
       run: haxe test-js.hxml
 
     - name: Compile [php]
+      if: matrix.haxe != 'latest'
       run: haxe test.hxml Lambda --php ignored.php
+
+    - name: Compile [php]
+      if: matrix.haxe == 'latest'
+      run: |
+        haxelib git hx4compat https://github.com/HaxeFoundation/hx4compat
+        haxe test.hxml Lambda --php ignored.php -lib hx4compat
